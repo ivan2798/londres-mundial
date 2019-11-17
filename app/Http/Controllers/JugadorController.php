@@ -38,7 +38,9 @@ class JugadorController extends Controller
     public function store(Request $request)
     { 
         $this->validate($request,['nombre' => 'required|string|min:4|max:8', 
-        'edad' => 'required|integer|between:10,20'] );
+        'edad' => 'required|integer|between:10,20'] ); 
+
+
         Jugador::create($request->all());  
       
         return redirect()->route('jugadores.index');
@@ -75,6 +77,9 @@ class JugadorController extends Controller
      */
     public function update(Request $request, Jugador $jugadores)
     {
+        $this->validate($request,['nombre' => 'required|string|min:4|max:8', 
+        'edad' => 'required|integer|between:10,20'] ); 
+        
         $jugadores->nombre = $request->nombre; 
         $jugadores->edad = $request->edad; 
       
