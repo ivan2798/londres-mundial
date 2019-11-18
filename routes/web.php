@@ -22,6 +22,6 @@ Route::resource('/jugadores','JugadorController')->parameters(['jugadores' => 'j
 
 Route::resource('/lideres','LiderController')->parameters(['lideres' => 'lideres']); 
                            
-
+Route::get('/jueces','JuezController@historia')->name('jueces');
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -35,8 +35,9 @@
   ======================================================= -->
 </head>
 
+
 <body>
-   <!--==========================
+ <!--==========================
     Header
   ============================-->
   <header id="header">
@@ -59,61 +60,73 @@
       </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
-  
-     <!--==========================
-      Subscribe Section
-    ============================-->
-    <section id="subscribe">
-      <div class="container wow fadeInUp">
-        <div class="section-header">
-          <h2>CAMPEONATO</h2>
-          <p>SMOGHON</p>
-        </div>
+ 
+ 
 
-        <form method="POST" action="#">
-          <div class="form-row justify-content-center">
-            <div class="col-auto">
-              <p>UNOVA, REGION DE TESELIA</p>
-            </div>
-           
-          </div>
-        </form>
-       </section>
+  <main id="main" class="main-page">
     
-   <!--==========================
-      Schedule Section
-    ============================-->
-    <section id="schedule" class="section-with-bg">
-      <div class="container wow fadeInUp">
-        <div class="section-header">
-          <h2>REGISTRADOS</h2>
-          <p>LISTA DE REGISTRADOS</p>
-        </div>
-
-        <ul class="nav nav-tabs" role="tablist">
-          <li class="nav-item">
-            <a href = "{{ route('jugadores.index')}}" class="btn btn-succes">LISTA JUGADORES</a>
-          </li> 
-          <li class="nav-item">
-            <a href = "{{ route('lideres.index')}}" class="btn btn-succes">LISTA LIDERES</a>
-          </li>
-        </ul>
-
-        <h3 class="sub-heading">La zona VGC sera de un tiempo limite de 20 minutos, la zona individual tendra 30 minutos 
-                               y la zona por equipo un limite de 10 minutos		</h3>
-
-        <div class="tab-content row justify-content-center">
-
-          <!-- Schdule Day 1 -->
-          @yield('tabla')
-           
-        </div>
-     </div>
-          <!-- End Schdule Day 1 -->
-    </section> 
   
 
-<a href="{{ asset('asset/#') }}" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!--==========================
+      Speaker Details Section
+    ============================-->
+    <section id="speakers-details" class="wow fadeIn">
+      <div class="container">
+        <div class="section-header">
+          <h2>INVITADOS</h2> 
+           @foreach($portafolio as $portafolioItem) 
+              <p> {{ $portafolioItem['title'] }} </p>
+           @endforeach
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <img src="{{ asset('asset/img/speakers/1.jpg') }}" alt="Speaker 1" class="img-fluid">
+          </div>
+
+          <div class="col-md-6">
+            <div class="details">
+              <h2>Satoshi Tajiri</h2>
+              
+              <p>Satoshi Tajiri(28 de agosto de 1965) es un diseñador japonés de videojuegos y el creador de la serie Pocket Monsters, conocida en occidente como Pokémon. </p>
+ 
+              <p>"Cuando era pequeño", comenta, "quería ser entomólogo" (profesión basada en el estudio de insectos). Cada nuevo insecto era un misterio. "Y siempre iba en busca de más y más a distintos ríos, pantanos y bosques." </p> 
+
+              
+            </div>
+          </div>
+          
+        </div>
+      </div> 
+	  
+	  <div class="container">
+        
+
+        <div class="row">
+          <div class="col-md-6">
+            <img src="{{ asset('asset/img/speakers/3.jpg') }}" alt="Speaker 1" class="img-fluid">
+          </div>
+
+          <div class="col-md-6">
+            <div class="details">
+              <h2>Shigeru Miyamoto</h2>
+              <p>Shigeru Miyamoto (nacido el 16 de noviembre de 1952) es un diseñador y productor de videojuegos japonés. Él es concido por ser el creador de algunas de las sagas de videojuegos más vendidas, más aclamadas, más duraderas y más influyentes de la historia.</p>
+              <p>Miyamoto se unió a Nintendo en 1977, cuando la compañía empezó su incursión a los videojuegos y empezó a abandonar el negocio de las cartas de mesa por el que empezó en 1889.</p> 
+              
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  
+  <a href="{{ asset('asset/#') }}" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 <!-- JavaScript Libraries -->
 <script src="{{ asset('asset/lib/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('asset/lib/jquery/jquery-migrate.min.js') }}"></script>
@@ -133,4 +146,3 @@
 </body>
 
 </html>
- 

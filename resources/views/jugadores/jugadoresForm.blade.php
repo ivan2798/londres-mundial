@@ -17,7 +17,7 @@
     @endif 
     
    <div class="section-header">
-      <h2>Registrarse para ser lider</h2>
+      <h2>Registrarse para ser jugador</h2>
       <p>Escoge el elemento que usaras</p>
     </div>
 
