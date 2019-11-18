@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Jugador;
+use App\Lider;
 use Illuminate\Http\Request;
 
-
-class JugadorController extends Controller
+class LiderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class JugadorController extends Controller
      */
     public function index()
     {
-        $jugadores = Jugador::all();  
-        return view('jugadores.jugadoresIndex', compact('jugadores'));
+        $lideres = Lider::all();  
+        return view('lideres.lideresIndex', compact('lideres'));
     }
 
     /**
@@ -26,7 +25,7 @@ class JugadorController extends Controller
      */
     public function create()
     {
-        return view('jugadores.jugadoresForm');
+        return view('lideres.lideresForm');
     }
 
     /**
@@ -36,68 +35,68 @@ class JugadorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    { 
+    {
         $this->validate($request,['nombre' => 'required|string|min:4|max:8', 
-        'edad' => 'required|integer|between:10,20'] ); 
+        'tipo' => 'required|string|min:4|max:8'] ); 
 
 
-        Jugador::create($request->all());  
+        Lider::create($request->all());  
       
-        return redirect()->route('jugadores.index');
+        return redirect()->route('lideres.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Jugador  $jugador
+     * @param  \App\Lider  $lider
      * @return \Illuminate\Http\Response
      */
-    public function show(Jugador $jugadores)
+    public function show(Lider $lideres)
     {
-        return view('jugadores.jugadoresShow',compact('jugadores'));
+        return view('lideres.lideresShow',compact('lideres'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Jugador  $jugador
+     * @param  \App\Lider  $lider
      * @return \Illuminate\Http\Response
      */
-    public function edit(Jugador $jugadores)
+    public function edit(Lider $lideres)
     {
-        return view('jugadores.jugadoresForm',compact('jugadores'));
+        return view('lideres.lideresForm',compact('lideres'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Jugador  $jugador
+     * @param  \App\Lider  $lider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Jugador $jugadores)
+    public function update(Request $request, Lider $lideres)
     {
         $this->validate($request,['nombre' => 'required|string|min:4|max:8', 
-        'edad' => 'required|integer|between:10,20'] ); 
+        'tipo' => 'required|string|min:4|max:8'] ); 
         
-        $jugadores->nombre = $request->nombre; 
-        $jugadores->edad = $request->edad; 
+        $lideres->nombre = $request->nombre; 
+        $lideres->tipo = $request->tipo; 
       
         
 
-        $jugadores->save(); 
-        return redirect()->route('jugadores.show',$jugadores->id)->width('up','Actualizado realizado');
+        $lideres->save(); 
+        return redirect()->route('lideres.show',$lideres->id) ->width('up','Actualizado realizado');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Jugador  $jugador
+     * @param  \App\Lider  $lider
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Jugador $jugadores)
+    public function destroy(Lider $lideres)
     {
-        $jugadores->delete(); 
-        return redirect()->route('jugadores.index')->width('status','Destruido realizado');
+        $lideres->delete(); 
+        return redirect()->route('lideres.index') ->width('status','Destruido realizado');
     }
 }

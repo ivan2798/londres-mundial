@@ -14,8 +14,5 @@ class Jugador extends Model
         return strtoupper($value);
     } 
 
-    public function setnombreAttribute($value) 
-    { 
-        $this->attribute['nombre'] = strtolower($value);
-    }
+   
 }

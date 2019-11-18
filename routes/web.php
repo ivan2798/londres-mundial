@@ -18,7 +18,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('/jugadores','JugadorController')->parameters(['jugadores' => 'jugadores']); 
+Route::resource('/jugadores','JugadorController')->parameters(['jugadores' => 'jugadores']);
+
+Route::resource('/lideres','LiderController')->parameters(['lideres' => 'lideres']); 
+                           
 
 
 Route::get('/home', 'HomeController@index')->name('home');

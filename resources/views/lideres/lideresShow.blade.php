@@ -4,11 +4,11 @@
   <div class="row schedule-item">
               <div class="col-md-2"><i>0</i></div>
               <div class="col-md-6">  
-			      <div class="speaker">
-                  <p >FOTO</p>
+			  <div class="speaker">
+              <p >FOTO</p>
                 </div>
-                <h4>Nombre <span>  Edad<span> </h4>
-                <p>Lider</p>
+                <h4>Nombre <span>  Tipo<span> </h4>
+                <p>Jugador</p>
               </div> 
 			  <div>  
 			  <div class="col-md-4">  
@@ -19,15 +19,15 @@
 
 
     <div class="row schedule-item">
-              <div class="col-md-2"><i>{{ $jugadores->id}}</i></div>
+              <div class="col-md-2"><i>{{ $lideres->id}}</i></div>
               <div class="col-md-6">  
-                <h4>{{ $jugadores->nombre}}<span>  {{ $jugadores->edad}}<span> </h4>
-                <p>{{ $jugadores->created_at}} <span>{{ $jugadores->updated_at}}</span></p>
+                <h4>{{ $lideres->nombre}}<span>  {{ $lideres->tipo}}<span> </h4>
+             
               </div> 
 			  <div>  
 			  <div class="col-md-4">  
-                <a href="{{route('jugadores.edit',$jugadores->id)}}" class="btn btn-sm btn-warning">EDITAR</a> 
-                <form action="{{route('jugadores.destroy',$jugadores->id)}}" method="POST">  
+                <a href="{{route('lideres.edit',$lideres->id)}}" class="btn btn-sm btn-warning">EDITAR</a> 
+                <form action="{{route('lideres.destroy',$lideres->id)}}" method="POST">  
                     @csrf
                     @method('DELETE') 
                     

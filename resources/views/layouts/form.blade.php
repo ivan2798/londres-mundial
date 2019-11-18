@@ -83,7 +83,7 @@
             <div class="speaker">
               <img src="{{ asset('asset/img/speakers/1.jpg') }}" alt="Speaker 1" class="img-fluid">
               <div class="details">
-                <h3><a href="">Satoshi Tajiri</a></h3>
+                <h3>Satoshi Tajiri</h3>
                 <p>Creador de pokemon</p>
                 <div class="social">
                   <p>INVITADO</p>
@@ -99,7 +99,7 @@
             <div class="speaker">
               <img src="{{ asset('asset/img/speakers/3.jpg') }}" alt="Speaker 3" class="img-fluid">
               <div class="details">
-                <p><a href="">Shigeru Miyamot</a></p>
+                <h3>Shigeru Miyamot</h3>
                 <p>Creador de smash</p>
                 <div class="social">
                 <p>INVITADO</p>
