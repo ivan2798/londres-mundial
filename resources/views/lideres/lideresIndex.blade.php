@@ -16,9 +16,15 @@
 </div> 
 @endif 
 
-@if(session('status'))
+@if(session()->has('statusl'))
 <div class="alert alert-success"> 
-   {{ session('status')}}
+   {{ session()->get('statusl')}}
+</div> 
+@endif  
+
+@if(session()->has('storel'))
+<div class="alert alert-success"> 
+   {{ session()->get('storel')}}
 </div> 
 @endif 
 

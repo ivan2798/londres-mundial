@@ -41,7 +41,7 @@ class LiderController extends Controller
 
 
         Lider::create($request->all());  
-      
+        session()->flash('storel','Agregado realizado');
         return redirect()->route('lideres.index');
     }
 
@@ -84,8 +84,10 @@ class LiderController extends Controller
       
         
 
-        $lideres->save(); 
-        return redirect()->route('lideres.show',$lideres->id) ->width('up','Actualizado realizado');
+        $lideres->save();  
+
+        session()->flash('upl','Actualizado realizado');
+        return redirect()->route('lideres.show',$lideres->id);
     }
 
     /**
@@ -96,7 +98,8 @@ class LiderController extends Controller
      */
     public function destroy(Lider $lideres)
     {
-        $lideres->delete(); 
-        return redirect()->route('lideres.index') ->width('status','Destruido realizado');
+        $lideres->delete();  
+        session()->flash('statusl','Destruido realizado');
+        return redirect()->route('lideres.index');
     }
 }

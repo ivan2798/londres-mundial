@@ -42,7 +42,7 @@ class JugadorController extends Controller
 
 
         Jugador::create($request->all());  
-      
+        session()->flash('storej','Agregado realizado');
         return redirect()->route('jugadores.index');
     }
 
@@ -85,8 +85,10 @@ class JugadorController extends Controller
       
         
 
-        $jugadores->save(); 
-        return redirect()->route('jugadores.show',$jugadores->id)->width('up','Actualizado realizado');
+        $jugadores->save();  
+
+        session()->flash('upj','Actualizado realizado');
+        return redirect()->route('jugadores.show',$jugadores->id);
     }
 
     /**
@@ -97,7 +99,8 @@ class JugadorController extends Controller
      */
     public function destroy(Jugador $jugadores)
     {
-        $jugadores->delete(); 
-        return redirect()->route('jugadores.index')->width('status','Destruido realizado');
+        $jugadores->delete();  
+        session()->flash('statusj','Destruido realizado');
+        return redirect()->route('jugadores.index');
     }
 }

@@ -17,7 +17,11 @@
 			</div>
     </div>   
 
-
+    @if(session()->has('upj'))
+       <div class="alert alert-success"> 
+         {{ session()->get('upj')}}
+        </div> 
+      @endif  
     <div class="row schedule-item">
               <div class="col-md-2"><i>{{ $jugadores->id}}</i></div>
               <div class="col-md-6">  

@@ -17,12 +17,15 @@
 			</div>
     </div>   
 
-
+     @if(session()->has('upl'))
+       <div class="alert alert-success"> 
+         {{ session()->get('upl')}}
+        </div> 
+      @endif    
     <div class="row schedule-item">
               <div class="col-md-2"><i>{{ $lideres->id}}</i></div>
               <div class="col-md-6">  
                 <h4>{{ $lideres->nombre}}<span>  {{ $lideres->tipo}}<span> </h4>
-             
               </div> 
 			  <div>  
 			  <div class="col-md-4">  
